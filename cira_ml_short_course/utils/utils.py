@@ -10,6 +10,7 @@ import numpy
 import pandas
 import matplotlib.colors
 from matplotlib import pyplot
+import tensorflow as tf
 import keras
 import tensorflow.keras as tf_keras
 import tensorflow.keras.layers as layers
@@ -1948,8 +1949,8 @@ def setup_dense_net(
     )
 
     model_object.compile(
-        loss=keras.losses.binary_crossentropy,
-        optimizer=keras.optimizers.Adam(),
+        loss=tf.keras.losses.binary_crossentropy,
+        optimizer=tf.keras.optimizers.Adam(),
         metrics=METRIC_FUNCTION_LIST
     )
 
