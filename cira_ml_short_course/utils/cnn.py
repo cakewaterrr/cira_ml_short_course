@@ -356,7 +356,7 @@ def setup_cnn(
     )
 
     model_object.compile(
-        loss=keras.losses.binary_crossentropy,
+        loss=tf.keras.losses.binary_crossentropy(from_logits=True),
         optimizer=tf.keras.optimizers.Adam(),
         metrics=METRIC_FUNCTION_LIST
     )
