@@ -5,6 +5,7 @@ import random
 import os.path
 import dill
 import numpy
+import tensorflow as tf
 import keras.models
 from cira_ml_short_course.utils import utils, image_utils, \
     image_normalization, image_thresholding
@@ -355,8 +356,8 @@ def setup_cnn(
     )
 
     model_object.compile(
-        loss=keras.losses.binary_crossentropy,
-        optimizer=keras.optimizers.Adam(),
+        loss=tf.keras.losses.binary_crossentropy,
+        optimizer=tf.keras.optimizers.Adam(),
         metrics=METRIC_FUNCTION_LIST
     )
 
